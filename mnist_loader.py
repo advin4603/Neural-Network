@@ -37,9 +37,9 @@ def load_data():
             if i < 30_000:
                 training_data.append((pixels, label))
             elif 30_000 <= i < 40_000:
-                validation_data.append((pixels, label))
+                validation_data.append((pixels, int(row[0])))
             else:
-                test_data.append((pixels, label))
+                test_data.append((pixels, int(row[0])))
             i += 1
             bar()
     return training_data, validation_data, test_data
